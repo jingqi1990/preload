@@ -44,3 +44,14 @@ preload.prototype.getComplete = function(callback){
 preload.prototype.getError = function(errorImg){
 	console.log(errorImg+'有错误！');
 }
+
+preload.prototype.getImgResult = function(id){
+	var ResultImg = null;
+	this.imgs.forEach(function(ev){ 
+    	if(ev.id == id){
+    		ResultImg = ev.img;
+    		return ev;
+    	}
+	});
+	return ResultImg;
+}
