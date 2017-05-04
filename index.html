@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<style type="text/css" media="screen">
+*{
+	margin: 0;
+	padding: 0;
+}
+
+</style>
+<body>
+	<script type="text/javascript" src="loadImage.js"></script>
+	<script type="text/javascript">
+	var manifest = [
+		{id:'1',src:"img/1.png"},
+		{id:'2',src:"img/2.png"},
+		{id:'3',src:"img/3.png"},
+		{id:'4',src:"img/4.png"},
+	];
+
+	qeue = new preload(manifest);
+
+
+	qeue.load(function(progress){
+		console.log(Math.round(progress*100));
+	});
+
+	qeue.getComplete(function(){
+		console.log('complete');
+	});
+	console.log(qeue);
+	</script>
+</body>
+</html>
